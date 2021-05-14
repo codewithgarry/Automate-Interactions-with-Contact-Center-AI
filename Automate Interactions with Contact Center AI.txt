@@ -10,13 +10,13 @@ git clone https://github.com/GoogleCloudPlatform/dataflow-contact-center-speech-
 
            -------------------------------------step 1-----------------------------
 Task 1: Create a Cloud Storage Bucket
-gsutil mb -l us-central1 gs://qwiklabs-gcp-04-222eb3160870/
 
-gsutil mb -l us-central1 gs://qwiklabs-gcp-04-f59761b5c891/
+
+gsutil mb -l us-central1 gs://[project id]/
 
 Task 2: Create a Cloud Function
 Go to the “saf-longrun-job-func” directory
-gcloud functions deploy safLongRunJobFunc --runtime nodejs8 --trigger-resource qwiklabs-gcp-04-f59761b5c891 --region us-central1 --trigger-event google.storage.object.finalize
+gcloud functions deploy safLongRunJobFunc --runtime nodejs8 --trigger-resource [project id] --region us-central1 --trigger-event google.storage.object.finalize
 
 
 
@@ -38,6 +38,8 @@ gcloud pubsub topics create [Topic_Name]
 Task 5: Create a Cloud Storage Bucket for Staging Contents
 gsutil mb -l [BUCKET_LOCATION] gs://[BUCKET_NAME]/
 Create a folder “DFaudio” in the bucket
+
+do it manually
 
 
 
